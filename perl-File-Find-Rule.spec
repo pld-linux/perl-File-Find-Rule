@@ -9,7 +9,7 @@ Summary:	File::Find::Rule - alternative interface to File::Find
 Summary(pl):	File::Find::Rule - alternatywny interfejs dla modu³u File::Find
 Name:		perl-File-Find-Rule
 Version:	0.28
-Release:	2
+Release:	3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -52,6 +52,9 @@ pliki i katalogi.
 rm -rf $RPM_BUILD_ROOT
 
 ./Build install
+
+# get rid of pod documentation
+rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/File/Find/Rule/*.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
