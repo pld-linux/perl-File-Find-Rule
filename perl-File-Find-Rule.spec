@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define		pdir	File
-%define		pnam	Find-Rule
+%define	pdir	File
+%define	pnam	Find-Rule
 Summary:	File::Find::Rule - alternative interface to File::Find
 Summary(pl):	File::Find::Rule - alternatywny interfejs dla modu³u File::Find
 Name:		perl-File-Find-Rule
