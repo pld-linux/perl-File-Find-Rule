@@ -9,7 +9,7 @@ Summary:	File::Find::Rule - alternative interface to File::Find
 Summary(pl):	File::Find::Rule - alternatywny interfejs dla modu³u File::Find
 Name:		perl-File-Find-Rule
 Version:	0.27
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
