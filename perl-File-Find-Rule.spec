@@ -1,22 +1,22 @@
-
+#
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
-
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	File
 %define		pnam	Find-Rule
 Summary:	File::Find::Rule - alternative interface to File::Find
 Summary(pl):	File::Find::Rule - alternatywny interfejs dla modu³u File::Find
 Name:		perl-File-Find-Rule
-Version:	0.26
+Version:	0.27
 Release:	1
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	b7130904be0591fcead85793208d7499
+# Source0-md5:	b14f1f2b70d6d2b9cc16a59da9644684
+BuildRequires:	perl-Module-Build >= 0.20
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	perl-Module-Build >= 0.20
 %if %{with tests}
 BuildRequires:	perl-Number-Compare
 BuildRequires:	perl(Test::More)
@@ -41,8 +41,10 @@ pliki i katalogi.
 %build
 %{__perl} Build.PL \
 	installdirs=vendor \
+	perl="%{__perl}" \
 	destdir=$RPM_BUILD_ROOT
 ./Build
+
 %{?with_tests:./Build test}
 
 %install
