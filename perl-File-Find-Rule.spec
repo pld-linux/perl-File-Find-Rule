@@ -8,12 +8,12 @@
 Summary:	File::Find::Rule - alternative interface to File::Find
 Summary(pl):	File::Find::Rule - alternatywny interfejs dla modu³u File::Find
 Name:		perl-File-Find-Rule
-Version:	0.10
+Version:	0.20
 Release:	1
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	1409fb97fac9f1b71ccaf3784fee2b96
+# Source0-md5:	f2d492269abd59c2b995d4465b38dfaa
 BuildRequires:	perl-devel >= 5.6
 %if %{?_without_tests:0}%{!?_without_tests:1}
 BuildRequires:	perl-Number-Compare
@@ -54,6 +54,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes
-%attr(755,root,root) %{_bindir}/*
+#%attr(755,root,root) %{_bindir}/*
 %{perl_vendorlib}/File/Find
 %{_mandir}/man[13]/*
