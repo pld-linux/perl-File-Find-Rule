@@ -6,7 +6,7 @@
 %define		pdir	File
 %define		pnam	Find-Rule
 Summary:	File::Find::Rule - alternative interface to File::Find
-Summary(pl):	File::Find::Rule - alternatywny interfejs dla modu≥u File::Find
+Summary(pl.UTF-8):   File::Find::Rule - alternatywny interfejs dla modu≈Çu File::Find
 Name:		perl-File-Find-Rule
 Version:	0.30
 Release:	1
@@ -31,9 +31,9 @@ File::Find::Rule Perl module is a friendlier interface to File::Find.
 It allows you to build rules which specify the desired files and
 directories.
 
-%description -l pl
-Modu≥ Perla File::Find::Rule stanowi bardziej przyjazny interfejs do
-modu≥u File::Find. Umoøliwia on tworzenie regu≥ okre∂laj±cych wymagane
+%description -l pl.UTF-8
+Modu≈Ç Perla File::Find::Rule stanowi bardziej przyjazny interfejs do
+modu≈Çu File::Find. Umo≈ºliwia on tworzenie regu≈Ç okre≈õlajƒÖcych wymagane
 pliki i katalogi.
 
 %prep
