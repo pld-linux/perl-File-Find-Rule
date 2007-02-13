@@ -6,7 +6,7 @@
 %define		pdir	File
 %define		pnam	Find-Rule
 Summary:	File::Find::Rule - alternative interface to File::Find
-Summary(pl.UTF-8):   File::Find::Rule - alternatywny interfejs dla modułu File::Find
+Summary(pl.UTF-8):	File::Find::Rule - alternatywny interfejs dla modułu File::Find
 Name:		perl-File-Find-Rule
 Version:	0.30
 Release:	1
