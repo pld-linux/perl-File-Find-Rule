@@ -8,21 +8,20 @@
 Summary:	File::Find::Rule - alternative interface to File::Find
 Summary(pl.UTF-8):	File::Find::Rule - alternatywny interfejs dla modułu File::Find
 Name:		perl-File-Find-Rule
-Version:	0.30
-Release:	2
+Version:	0.32
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/File/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	1acbafde554fda561d3830821085d3a9
+Source0:	http://www.cpan.org/modules/by-module/File/RCLAMP/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	1b43810c6b8fd4ee5cee8046e1e05ff4
 URL:		http://search.cpan.org/dist/File-Find-Rule/
-BuildRequires:	perl-Module-Build >= 0.20
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Number-Compare
-BuildRequires:	perl(Test::More)
-BuildRequires:	perl-Text-Glob
+BuildRequires:	perl-Test-Simple
+BuildRequires:	perl-Text-Glob >= 0.07
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -41,21 +40,20 @@ pliki i katalogi.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Build.PL \
-	installdirs=vendor \
-	perl="%{__perl}" \
-	destdir=$RPM_BUILD_ROOT
-./Build
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
+%{__make}
 
-%{?with_tests:./Build test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-./Build install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 # get rid of pod documentation
-rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/File/Find/Rule/*.pod
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/File/Find/Rule/*.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -64,6 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes
 %attr(755,root,root) %{_bindir}/findrule
-%{perl_vendorlib}/File/Find
-%{_mandir}/man1/*
-%{_mandir}/man3/*
+%dir %{perl_vendorlib}/File/Find
+%{perl_vendorlib}/File/Find/Rule.pm
+%{_mandir}/man1/findrule.1p*
+%{_mandir}/man3/File::Find::Rule*.3pm*
