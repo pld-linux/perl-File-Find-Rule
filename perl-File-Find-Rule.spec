@@ -14,9 +14,10 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/File/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	a7aa9ad4d8ee87b2a77b8e3722768712
-URL:		http://search.cpan.org/dist/File-Find-Rule/
+URL:		https://metacpan.org/release/File-Find-Rule
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
 BuildRequires:	perl-Number-Compare
 BuildRequires:	perl-Test-Simple
